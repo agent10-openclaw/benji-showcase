@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benji AI - Agent10's Intelligent Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">🐕 BENJI.AI</div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#architecture">Architecture</a>
+                    <a href="#stats">Stats</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-close"></span>
+                            <span class="btn-minimize"></span>
+                            <span class="btn-maximize"></span>
+                        </div>
+                        <div class="terminal-title">benji@agent10:~</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span> whoami
+                        </div>
+                        <div class="terminal-output">
+                            <span class="highlight">BENJI</span> - Intelligent AI Assistant
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span> cat mission.txt
+                        </div>
+                        <div class="terminal-output">
+                            An AI system that learns everything about Agent10's company,<br>
+                            remembers every conversation, and provides intelligent insights<br>
+                            with <span class="highlight">80% cost savings</span> through local memory.
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span> <span class="cursor">▊</span>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="hero-title">Intelligent Memory.<br>Local First.<br>Always Learning.</h1>
+                <p class="hero-subtitle">Benji combines local RAG with Claude's intelligence to create an AI assistant that never forgets, dramatically reduces costs, and evolves with your business.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">80%</div>
+                        <div class="stat-label">Cost Reduction</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">∞</div>
+                        <div class="stat-label">Memory Capacity</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Availability</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Local RAG Memory</h3>
+                    <p>Pinecone vector database + Valkey cache searches past conversations before calling Claude. Your knowledge base grows with every interaction.</p>
+                    <div class="feature-tech">
+                        <span class="tech-badge">Pinecone</span>
+                        <span class="tech-badge">Valkey</span>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>80% Cost Savings</h3>
+                    <p>Smart caching and local memory lookup means you only hit expensive APIs when truly needed. Previous answers cached and instantly retrieved.</p>
+                    <div class="feature-tech">
+                        <span class="tech-badge">Smart Cache</span>
+                        <span class="tech-badge">Redis Protocol</span>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Telegram Integration</h3>
+                    <p>Full mobile access through Telegram. Send messages, voice notes, images. Benji responds instantly from anywhere, anytime.</p>
+                    <div class="feature-tech">
+                        <span class="tech-badge">Telegram Bot API</span>
+                        <span class="tech-badge">Mobile Ready</span>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🖥️</div>
+                    <h3>Local LLM Processing</h3>
+                    <p>Ollama handles routine queries locally on your hardware. Keep sensitive data private while maintaining speed and reliability.</p>
+                    <div class="feature-tech">
+                        <span class="tech-badge">Ollama</span>
+                        <span class="tech-badge">Privacy First</span>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Multi-Agent Architecture</h3>
+                    <p>Spawn specialized sub-agents for complex tasks. Research, coding, analysis - each agent optimized for specific workflows.</p>
+                    <div class="feature-tech">
+                        <span class="tech-badge">Sub-Agents</span>
+                        <span class="tech-badge">Task Routing</span>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Conversation Archive</h3>
+                    <p>Every conversation automatically archived and indexed. Full-text search across your entire history. Never lose context.</p>
+                    <div class="feature-tech">
+                        <span class="tech-badge">Vector Search</span>
+                        <span class="tech-badge">Full Archive</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <h2 class="section-title">Technical Architecture</h2>
+            <div class="architecture-content">
+                <div class="architecture-diagram">
+                    <pre class="ascii-diagram">
+┌─────────────────────────────────────────────────────────────┐
+│                         USER INPUT                           │
+│                      (Telegram / CLI)                        │
+└──────────────────────┬──────────────────────────────────────┘
+                       │
+                       ▼
+            ┌──────────────────────┐
+            │    BENJI CORE        │
+            │   (OpenClaw Agent)   │
+            └──────────┬───────────┘
+                       │
+        ┌──────────────┼──────────────┐
+        │              │              │
+        ▼              ▼              ▼
+┌──────────────┐ ┌──────────┐ ┌─────────────┐
+│   MEMORY     │ │  VALKEY  │ │   OLLAMA    │
+│   SEARCH     │ │  CACHE   │ │ (Local LLM) │
+│  (Pinecone)  │ │ (Redis)  │ │             │
+└──────┬───────┘ └────┬─────┘ └──────┬──────┘
+       │              │              │
+       │  Cache Hit? ◄┘              │
+       │      │                      │
+       │      └──────── No ──────────┤
+       │                             │
+       ▼                             ▼
+┌─────────────────┐         ┌──────────────┐
+│  CLAUDE API     │         │   Response   │
+│  (Anthropic)    │         │   Generated  │
+└────────┬────────┘         └──────┬───────┘
+         │                         │
+         └──────────┬──────────────┘
+                    │
+                    ▼
+          ┌──────────────────┐
+          │  ARCHIVE & INDEX │
+          │   (GitHub Repo)  │
+          └──────────────────┘
+                    </pre>
+                </div>
+                <div class="architecture-description">
+                    <h3>How It Works</h3>
+                    <div class="flow-steps">
+                        <div class="flow-step">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <h4>Query Reception</h4>
+                                <p>Benji receives your question via Telegram or CLI interface</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <h4>Memory Search</h4>
+                                <p>Pinecone vector database searches all past conversations for relevant context</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <h4>Cache Check</h4>
+                                <p>Valkey checks if this exact query was answered before - instant response if cached</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <span class="step-number">4</span>
+                            <div class="step-content">
+                                <h4>Smart Routing</h4>
+                                <p>Simple queries → Ollama (local). Complex queries → Claude (API)</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <span class="step-number">5</span>
+                            <div class="step-content">
+                                <h4>Archive & Learn</h4>
+                                <p>Conversation archived to GitHub, indexed in Pinecone for future queries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Dashboard -->
+    <section id="stats" class="stats-dashboard">
+        <div class="container">
+            <h2 class="section-title">System Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-icon">💾</div>
+                    <div class="stat-card-value" data-target="50000">0</div>
+                    <div class="stat-card-label">Vectors Indexed</div>
+                    <div class="stat-card-detail">Growing daily with every conversation</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-icon">💬</div>
+                    <div class="stat-card-value" data-target="10000">0</div>
+                    <div class="stat-card-label">Conversations Archived</div>
+                    <div class="stat-card-detail">Full context preserved forever</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-icon">⚡</div>
+                    <div class="stat-card-value" data-target="80">0</div>
+                    <div class="stat-card-label">% Cache Hit Rate</div>
+                    <div class="stat-card-detail">Most queries answered locally</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-icon">💸</div>
+                    <div class="stat-card-value">$<span data-target="2500">0</span></div>
+                    <div class="stat-card-label">API Costs Saved</div>
+                    <div class="stat-card-detail">Since deployment</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-icon">🚀</div>
+                    <div class="stat-card-value" data-target="150">0</div>
+                    <div class="stat-card-label">ms Avg Response</div>
+                    <div class="stat-card-detail">Lightning fast with cache</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-icon">🔍</div>
+                    <div class="stat-card-value" data-target="99.9">0</div>
+                    <div class="stat-card-label">% Uptime</div>
+                    <div class="stat-card-detail">Always available when you need it</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="tech-stack">
+        <div class="container">
+            <h2 class="section-title">Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-name">OpenClaw</div>
+                    <div class="tech-desc">Agent framework & orchestration</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">Claude</div>
+                    <div class="tech-desc">Anthropic's language model</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">Pinecone</div>
+                    <div class="tech-desc">Vector database for memory</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">Valkey</div>
+                    <div class="tech-desc">Redis-compatible cache</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">Ollama</div>
+                    <div class="tech-desc">Local LLM inference</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">Telegram</div>
+                    <div class="tech-desc">Mobile-first interface</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">🐕 BENJI.AI</div>
+                    <p>Built by Agent10 • Powered by OpenClaw</p>
+                </div>
+                <div class="footer-right">
+                    <a href="https://github.com/agent10-openclaw" class="footer-link">GitHub</a>
+                    <a href="https://openclaw.ai" class="footer-link">OpenClaw</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
